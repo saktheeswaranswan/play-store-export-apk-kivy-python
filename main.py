@@ -27,10 +27,14 @@ score_area = pygame.Surface((65, 200))
 
 pygame.display.set_caption("Rohit's car game")
 
+#load assets
 cs = os.path.abspath('crash_sound.wav')
 bs = os.path.abspath('background_sound.wav')
 es = os.path.abspath('engine_sound.wav')
 print(cs,bs,es)
+car1 = os.path.abspath('car1.png')
+car2 = os.path.abspath('car2.png')
+carq = os.path.abspath('carq.png')
 
 crash_sound = pygame.mixer.Sound(cs)
 back_sound = pygame.mixer.Sound(bs)
@@ -75,7 +79,7 @@ def run_game():
     # highway_loc.x = width/2 - highway_loc.width/2
     # highway_loc.y = 0
 
-    car_image = pygame.image.load('car1.png')
+    car_image = pygame.image.load(car1)
     car_width, car_height = 80, 160  # Set the desired width and height for the car
     car_image = pygame.transform.scale(car_image, (car_width, car_height))  # Resize the car image
 
@@ -84,7 +88,7 @@ def run_game():
     car_loc.y = height * 0.7  # Set the y-coordinate to position the car vertically
 
     if random.randint(0, 1) == 0:
-        car_image1 = pygame.image.load('car2.png')
+        car_image1 = pygame.image.load(car2)
         car_width1, car_height1 = 80, 160  # Set the desired width and height for the car
         car_image1 = pygame.transform.scale(car_image1, (car_width1, car_height1))  # Resize the car image
 
@@ -93,7 +97,7 @@ def run_game():
         car_loc1.y = height * 0.02  # Set the y-coordinate to position the car vertically
 
     else:
-        car_image1 = pygame.image.load('carq.png')
+        car_image1 = pygame.image.load(carq)
         car_width1, car_height1 = 100, 160  # Set the desired width and height for the car
         car_image1 = pygame.transform.scale(car_image1, (car_width1, car_height1))  # Resize the car image
 

@@ -1,7 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 import pygame.mixer
-import random
+import random, os
 from scrore import update, show
 
 size = width, height = (450, 700)
@@ -27,9 +27,14 @@ score_area = pygame.Surface((65, 200))
 
 pygame.display.set_caption("Rohit's car game")
 
-crash_sound = pygame.mixer.Sound('crash_sound.wav')
-back_sound = pygame.mixer.Sound('background_sound.wav')
-engine_sound = pygame.mixer.Sound('engine_sound.wav')
+cs = os.path.abspath('crash_sound.wav')
+bs = os.path.abspath('background_sound.wav')
+es = os.path.abspath('engine_sound.wav')
+print(cs,bs,es)
+
+crash_sound = pygame.mixer.Sound(cs)
+back_sound = pygame.mixer.Sound(bs)
+engine_sound = pygame.mixer.Sound(es)
 
 def print_score(sc, sp):
     score_area.fill((60, 220, 0))

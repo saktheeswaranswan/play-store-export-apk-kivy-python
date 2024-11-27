@@ -12,8 +12,11 @@ pygame.font.init()
 if platform == "android":
     screen_size = pygame.display.Info()
     size = width, height = (screen_size.current_w, screen_size.current_h)
+    car_speed = 10
 else:
     size = width, height = (450, 700)
+    car_speed = 1
+
 road_w = int(width/1.4)
 roadmark_w = int(width/60)
 
@@ -70,8 +73,8 @@ def draw_image(screen, car_image, car_loc, car_image1, car_loc1):
     screen.blit(car_image1, car_loc1)
 
     
-def run_game():
-    speed = 1
+def run_game(speed_):
+    car_speed = speed_
     game_over = False
     game_close = False
 
@@ -136,14 +139,14 @@ def run_game():
                         game_close = False
 
                     if event.key == pygame.K_PAGEDOWN:
-                        run_game()
+                        run_game(car_speed)
 
                     if event.key == pygame.K_SPACE:
-                        run_game()
+                        run_game(car_speed)
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if game_close == True:
-                        run_game()
+                        run_game(car_speed)
                         #game_over = False
                 
 
@@ -156,12 +159,12 @@ def run_game():
         left_lane = width/3 - car_loc1.width/2
         engine_sound.play()
         if counter == 1024:
-            speed += 0.15
+            car_speed += 0.15
             counter = 0
         # highway_loc[1] += 700
         # if highway_loc[1] > height:
         #     highway_loc[1] = -200
-        car_loc1[1] += speed
+        car_loc1[1] += car_speed
         if car_loc1[1] > height:
             car_loc1[1] = -200
             car_sc = car_sc + 3
@@ -226,4 +229,4 @@ def run_game():
     pygame.quit()
     quit()
 
-run_game()
+run_game(car_speed)

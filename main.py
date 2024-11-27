@@ -3,14 +3,19 @@ from pygame.locals import *
 import pygame.mixer
 import random, os
 from scrore import update, show
-
-size = width, height = (450, 700)
-road_w = int(width/1.4)
-roadmark_w = int(width/60)
+from kivy.utils import platform
 
 pygame.init()
 pygame.mixer.init()
 pygame.font.init()
+
+if platform == "android":
+    screen_size = pygame.display.Info()
+    size = width, height = (screen_size.current_w, screen_size.current_h)
+else:
+    size = width, height = (450, 700)
+road_w = int(width/1.4)
+roadmark_w = int(width/60)
 
 orange = (255, 165, 0)
 red = 'red' #(255, 165, 0)
@@ -176,10 +181,10 @@ def run_game():
 
             if event.type == KEYDOWN:
                 if event.key in [K_a, K_LEFT]:
-                    if car_loc.x > 223:
+                    if car_loc.x > width/2:
                         car_loc = car_loc.move([-int(road_w/2), 0])
                 if event.key in [K_d, K_RIGHT]:
-                    if car_loc.x < 233 :
+                    if car_loc.x < width/2 :
                         car_loc = car_loc.move([int(road_w/2), 0])
                 
                 if event.key in [K_d, K_2]:

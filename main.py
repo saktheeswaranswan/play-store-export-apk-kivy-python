@@ -195,10 +195,10 @@ def run_game():
                 # print(mouse_x, mouse_y)
 
 
-                if mouse_x > 223 and car_loc.right < road_w:
+                if mouse_x > width/2 and car_loc.right < road_w:
                     car_loc = car_loc.move([int(road_w/2), 0])
                 
-                if mouse_x < 223 and car_loc.left > int(road_w/2):
+                if mouse_x < width/2 and car_loc.left > int(road_w/2):
                     car_loc = car_loc.move([-int(road_w/2), 0])
 
 

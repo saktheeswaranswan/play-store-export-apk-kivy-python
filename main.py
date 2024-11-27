@@ -27,9 +27,9 @@ score_area = pygame.Surface((65, 200))
 
 pygame.display.set_caption("Rohit's car game")
 
-crash_sound = pygame.mixer.Sound('./crash_sound.wav')
-back_sound = pygame.mixer.Sound('./background_sound.wav')
-engine_sound = pygame.mixer.Sound('./engine_sound.wav')
+crash_sound = pygame.mixer.Sound('crash_sound.wav')
+back_sound = pygame.mixer.Sound('background_sound.wav')
+engine_sound = pygame.mixer.Sound('engine_sound.wav')
 
 def print_score(sc, sp):
     score_area.fill((60, 220, 0))

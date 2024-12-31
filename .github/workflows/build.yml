@@ -21,6 +21,7 @@ jobs:
       - name: Get Date
         id: get-date
         run: |
+          sudo apt update
           echo "::save-state name=date::$(/bin/date -u "+%Y%m%d")"
         shell: bash
 

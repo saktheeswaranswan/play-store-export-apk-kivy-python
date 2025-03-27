@@ -5,3 +5,10 @@ Here in this article, detailed guide are well written - https://threshhold.pytho
 pygame car game apk link https://github.com/wishrohitv/Car-Game-pygame/releases/download/v1/cargame-0.1-arm64-v8a_armeabi-v7a-debug.apk
 
 ** In this repo is guide about how to convert Pygame code to Android apk **
+
+
+https://www.youtube.com/watch?v=XU6KjN1lwvY
+
+https://www.youtube.com/watch?v=MkQDATDb_o4
+
+https://www.youtube.com/watch?v=D0reWInYl6k
